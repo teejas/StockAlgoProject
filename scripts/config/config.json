@@ -1,0 +1,46 @@
+{
+  "paths": {
+    "raw_data_yahoo": "../data/raw/yahoo/S&P500/",
+    "raw_data_kibot": "../data/raw/kibot/S&P500/",
+    "clean_data_kibot": "../data/clean/kibot/S&P500",
+    "processed": "../data/processed/S&P500/",
+    "labels_file": "../data/processed/S&P500/labels.txt"
+  },
+
+  "kibot": {
+    "api_url": "http://api.kibot.com/",
+    "username": "pdong2@illinois.edu",
+    "password": "sa69636t6",
+    "request_params": {
+      "action": "history",
+      "symbol": "SPY",
+      "interval": "10",
+      "startdate": "02/13/2018"
+    },
+    "row_values": {
+        "date": 0,
+        "time": 1,
+        "open": 2,
+        "high": 3,
+        "low": 4,
+        "close": 5,
+        "volume": 6
+    },
+    "exclude_symbols": [],
+    "clean_settings": {
+        "keep_attrs": {
+            "high": "previous",
+            "close": "previous",
+            "volume": 0
+        },
+        "base": "SPY",
+        "interval": 600
+    },
+    "process": {
+      "window_size": 144,
+      "image_width": 224,
+      "image_height": 224,
+      "prediction_distance": 144
+    }
+  }
+}
